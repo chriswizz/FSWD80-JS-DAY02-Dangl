@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 3 - ATM machine</title>
+	<link rel="stylesheet" href="ATM_machine.css">
+</head>
+<body class="body">
+
+	<div class="container">
+
+		<header class="header">
+			ATM machine
+		</header>
+
+		<form class="inputForm">
+			<p class="inputParagraph">Please enter the amount you want to withdraw (min: 10€, max: 400€)</p>
+			<input type="number" id="enterAmount" placeholder="150"><br>
+			<button onclick="return checkAmount()">Submit</button>			
+		</form>
+
+		<div class="output">
+			<p>number of 100 Euro notes: <span id="notesOfHundred" class="bold">0</span></p>
+			<p>number of 50 Euro notes: <span id="notesOfFifty" class="bold">0</span></p>
+			<p>number of 20 Euro notes: <span id="notesOfTwenty" class="bold">0</span></p>
+			<p>number of 10 Euro notes: <span id="notesOfTen" class="bold">0</span></p>
+		</div>
+
+	</div>
+
+	<script>
+
+		var availableProbability = 0.8;
+
+		var available100 = (function(){
+			if (Math.random() < (1 - availableProbability) ){
+				return false;
+			} else {
+				return true;
+			}
+		}());
+
+		var available50 = (function(){
+			if (Math.random() < (1 - availableProbability) ){
+				return false;
+			} else {
+				return true;
+			}
+		}());
+
+		var available20 = (function(){
+			if (Math.random() < (1 - availableProbability) ){
+				return false;
+			} else {
+				return true;
+			}
+		}());
+
+		var available10 = (function(){
+			if (Math.random() < (1 - availableProbability) ){
+				return false;
+			} else {
+				return true;
+			}
+		}());
+
+		// var availableNumber = available100 + available50 + available20 + available10;
+		// if (availableNumber < 3) {
+		// 	alert("Contact bank for refill notes");
+		// }
+
+		console.log(available100);
+		console.log(available50);
+		console.log(available20);
+		console.log(available10);
+
+		function checkAmount() {
+			var amount = document.getElementById("enterAmount").value;
+
+			var number100 = 0;
+			var number50 = 0;
+			var number20 = 0;
+			var number10 = 0;
+
+			var remainder100 = 0;
+			var remainder50 = 0;
+			var remainder20 = 0;
+
+			number100 = Math.floor(amount / 100);
+			remainder100 = amount % 100;
+			number50 = Math.floor(remainder100 / 50);
+			remainder50 = remainder100 % 50;
+			number20 = Math.floor(remainder50 / 20);
+			remainder20 = remainder50 % 20;
+			number10 = remainder20 / 10;
+
+			switch (true) {
+				case (amount < 10 || amount > 400):
+					alert("Please enter an amount from 10€ to 400€");
+					break;
+				case (amount % 10 !== 0):
+					alert("Please enter whole tens");
+					break;
+				case (10 <= amount <= 400):
+					if (available100 == 0) {
+						document.getElementById("notesOfHundred").innerHTML = "n/a";
+						document.getElementById("notesOfHundred").style.color = "red";}
+					document.getElementById("notesOfFifty").innerHTML = number50;
+					document.getElementById("notesOfTwenty").innerHTML = number20;
+					document.getElementById("notesOfTen").innerHTML = number10;
+					return false;
+			}
+		}
+		
+	</script>
+</body>
+</html>

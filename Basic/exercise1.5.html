@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic exercises 1 to 5</title>
+</head>
+<body>
+
+	<script>
+		document.write("<h2>Basic 1 | Crystal Gazer</h2>");
+		document.write("<h3>" + crystalGazer(2, "Sophia", "Vienna", "programmer") + "</h3><hr>");
+
+		document.write("<h2>Basic 2 | Age Calculator<h2>");
+		document.write("<h3>" + ageCalculator(1989, 2019)  + "</h3><hr>");
+
+		document.write("<h2>Basic 3 | Age Calculator-improved</h2>");
+		document.write("<h3>" + ageCalculatorImproved(1982)  + "</h3><hr>");
+
+		document.write("<h2>Basic 4 | Degree-Radian Conversion</h2>");
+		document.write("<h3>" + degreesToRadians(90)  + " radians </h3><hr>");
+
+		document.write("<h2>Basic 5 | Area and Volume of a box</h2>");
+		document.write("<h3>" + calculateAreaVolume(22, 33, 44)  + "</h3><hr>");
+
+
+
+		function crystalGazer(number_childrens, partners_name, location, job_title) {
+			return("You will be a " + job_title + " in " + location + " and married to " + partners_name + " with " + number_childrens + " children.");
+		}
+
+		function ageCalculator(birth_year, current_year) {
+			var ageCeil = current_year - birth_year;
+			var ageFloor = ageCeil - 1;
+			return("You are either " + ageCeil + " or " + ageFloor);
+		}
+
+		function ageCalculatorImproved(birth_year) {
+			var current_year = new Date();
+			current_year = current_year.getFullYear();
+			var ageCeil = current_year - birth_year;
+			var ageFloor = ageCeil - 1;
+			return("You are either " + ageCeil + " or " + ageFloor);
+		}
+
+		function degreesToRadians(degrees) {
+			var radians = Math.trunc(degrees * Math.PI / 180 * 100000) / 100000;
+			return(radians);
+		}
+
+		function calculateAreaVolume(width, height, depth) {
+			var area = width * height;
+			var volume = width * height * depth;
+			return("The area of the box is: " + area + "<br>The volume of the box is: " + volume)
+
+		}
+
+	</script>
+
+</body>
+</html>

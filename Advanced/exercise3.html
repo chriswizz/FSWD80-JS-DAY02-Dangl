@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 3 - Dynamic Background</title>
+</head>
+<body>
+	<script>
+		function backgroundColorChange() {
+
+			var R = Math.floor(Math.random() * 256);
+			var G = Math.floor(Math.random() * 256);
+			var B = Math.floor(Math.random() * 256);
+
+			var rgb = "rgb(" + R + ", " + G + ", " + B + ")";
+
+			document.write(rgb);
+			document.body.style.backgroundColor = rgb;
+		}	
+
+		window.onbeforeunload = backgroundColorChange();
+	</script>
+
+</body>
+</html>

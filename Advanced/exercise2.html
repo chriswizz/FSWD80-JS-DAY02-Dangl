@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 2 - Yesterday's date</title>
+</head>
+<body>
+	<script>
+		var yesterdaysDate = (function(dateInput) {
+		var dateInput = new Date(dateInput);
+		var yesterday = new Date(dateInput - 1);
+
+		var weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+		var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dez"];
+
+		var yesterdayWeekday = weekdays[yesterday.getDay() - 1];
+		var yesterdayMonth = months[yesterday.getMonth()]
+
+		document.write("<h1>" + yesterdayWeekday + " " + yesterdayMonth + " " + yesterday.getDate() + " " + yesterday.getFullYear() + "</h1>");
+		});
+
+		yesterdaysDate("Feb 23, 2017")
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+.body {
+	display: flex;
+	height: 90vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+	height: 500px;
+	border: 1px solid black;
+	background: #99ccff;
+}
+
+.header {
+	display: flex;
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 50px;
+}
+
+.inputForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1.2em;
+	width: 50%;
+}
+
+.inputParagraph {
+	display: flex;
+	text-align: center;
+}
+
+.output {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.bold {
+	font-weight: bold
+}

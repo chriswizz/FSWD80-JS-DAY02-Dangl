@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 2 - Average Grade</title>
+</head>
+<body>
+	
+	<script>
+
+		var gradeMath = prompt("Please enter your Math grade:");
+		var gradePhysics = prompt("Please enter your Physics grade:");
+		var gradeEnglish = prompt("Please enter your English grade:");
+
+		if ( isNaN(gradeMath) || isNaN(gradePhysics) || isNaN(gradeEnglish) ) {
+			alert("Please enter numbers.");
+			location.reload();
+
+		} else if (	( gradeMath % 1 !== 0 || gradeMath < 1 || gradeMath > 5) ||
+					( gradePhysics % 1 !== 0 || gradePhysics < 1 || gradePhysics > 5) ||
+					( gradeEnglish % 1 !== 0 || gradeEnglish < 1 || gradeEnglish > 5) ) {
+						alert("Please only enter whole numbers from 1 to 5.");
+						location.reload();
+						
+		} else {
+			var sum = parseInt(gradeMath) + parseInt(gradePhysics) + parseInt(gradeEnglish);
+			var average = sum / 3;
+
+			document.write("<h3>Sum: " + sum + "</h3>");
+			document.write("<h3>Average: " + average.toFixed(1) + "</h3>");
+		}
+
+	</script>
+
+</body>
+</html>

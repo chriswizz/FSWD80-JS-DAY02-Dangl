@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 1 - Time Convert</title>
+</head>
+<body>
+	<script>
+		function timeConvert (minutesInput) {
+			var hours = Math.floor(minutesInput / 60);
+			var minutes = minutesInput % 60;
+
+			alert(minutesInput + " minutes = " + hours + " hour(s) and " + minutes + " minute(s).");
+		}
+
+		timeConvert(200);
+	</script>
+
+</body>
+</html>
